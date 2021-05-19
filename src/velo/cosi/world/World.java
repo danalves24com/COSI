@@ -4,7 +4,7 @@ import velo.cosi.elements.CoreElement;
 
 public class World {
 	
-	private static CoreElement[][] mesh;
+	public static CoreElement[][] mesh;
 	private int xDim, yDim;
 	public World(int xdim, int ydim) {
 		this.mesh = new CoreElement[xdim][ydim];
@@ -41,7 +41,9 @@ public class World {
 	public static void tick() {
 		for(int i = 0 ; i < mesh.length ; i +=1 ) {
 			for(int ii = 0 ; ii < mesh[0].length ; ii+=1) {
-				mesh[i][ii].tick();;
+				if(mesh[i][ii]!=null) {
+					mesh[i][ii].tick();	
+				}				
 			}
 		}
 	}
