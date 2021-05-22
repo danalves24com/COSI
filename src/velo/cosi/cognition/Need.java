@@ -8,6 +8,9 @@ public class Need {
 	public Need(String name) {
 		this.name = name;
 	}
+	public String name( ) {
+		return this.name;
+	}
 	public NeedStatus getStatus() {
 		return this.status;
 	}
@@ -16,5 +19,12 @@ public class Need {
 	}
 	public void decreaseStatus() {
 		statusIndex-=1;
+	}
+	public boolean equals(Object o) {
+		Need en = (Need)o;
+		if(en.name().equals(this.name)) {
+			return true;
+		}
+		return false;
 	}
 }

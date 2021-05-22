@@ -7,7 +7,7 @@ public class Sensor {
 	public double[] output() {
 		return this.out;
 	}
-	public void read(Interactor pov) {
+	public void read(Interactor inter) {
 		// fill out
 	}
 }
