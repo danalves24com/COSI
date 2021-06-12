@@ -36,6 +36,7 @@ public class World {
 	}
 	public void populate(CoreElement el) {
 		int xPos = (int) (Math.random() * xDim), yPos = (int) (Math.random() * xDim);
+		el.setPosition(xPos, yPos);
 		mesh[xPos][yPos] = el;
 	}
 	public static void tick() {

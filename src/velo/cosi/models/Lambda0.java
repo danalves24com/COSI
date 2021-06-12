@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import velo.cosi.actions.Action;
+import velo.cosi.actions.Sleep;
 import velo.cosi.behaviour.Lambda0Behaviour;
 import velo.cosi.behaviour.Pattern;
 import velo.cosi.cognition.Need;
@@ -20,16 +21,18 @@ public class Lambda0 extends Interactor{
 		
 	}	
 	public Lambda0() {
+		
 		super(name, description);
 		Sensor[] sensors = new Sensor[] {new LMBDx0(2)};
 		for(Sensor s : sensors) {
 			this.sensorArray.add(s);
 		}
+		Interactor self = this;
 		behaviour = new Lambda0Behaviour(new Pattern[] {
-			new Pattern(
-					new Need("energy"),
-					new Action()
-					)	
+								
+			new Pattern(new Need("energy"),new Sleep(self))			
+		
+			
 		});
 	}
 	public void tick() {
